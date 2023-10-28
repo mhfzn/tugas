@@ -1,0 +1,41 @@
+package tugas1_restaurant;
+
+import java.util.scanner;
+
+public class tugas1_restaurant{
+	public menu[] makanan;
+	public menu[] minuman;
+
+	public void setMakanan() {
+		makanan = new menu [4];
+		makanan [0] = (new menu("makanan", "ayam bakar", 15000 ));
+		makanan [1] = (new menu("makanan", "ayam goreng", 17000 ));
+		makanan [2] = (new menu("makanan", "pecel ayam", 18000 ));
+		makanan [3] = (new menu("makanan", "ayam geprek", 16000 ));
+	}
+	public void setMinuman() {
+		minuman = new menu[4];
+		minuman [0] = (new menu("minuman", "es teh manis", 5000 ));
+		minuman [1] = (new menu("minuman", "es tee", 4000 ));
+		minuman [0] = (new menu("minuman", "es jeruk", 7000 ));
+		minuman [0] = (new menu("minuman", "air putih", 2000 ));
+	}
+	public double totalHarga (pesanan[] pesan) {
+		double harga1 = pesan[0].Menu.harga * pesan[0].jumlahPesanan;
+		double harga1 = pesan[1].Menu.harga * pesan[1].jumlahPesanan;
+		double harga1 = pesan[2].Menu.harga * pesan[2].jumlahPesanan;
+		double harga1 = pesan[3].Menu.harga * pesan[3].jumlahPesanan;
+		double harga1 = pesan[4].Menu.harga * pesan[4].jumlahPesanan;
+		double harga1 = pesan[5].Menu.harga * pesan[5].jumlahPesanan;
+		double harga1 = pesan[6].Menu.harga * pesan[6].jumlahPesanan;
+		double harga1 = pesan[7].Menu.harga * pesan[7].jumlahPesanan;
+
+		if (total>=50000) {
+			System.out.printIn("Selamat Anda mendapatkan promo beli 1 minuman gratis 1");
+		
+		if (total>=100000){
+
+		}
+		}
+	}
+}

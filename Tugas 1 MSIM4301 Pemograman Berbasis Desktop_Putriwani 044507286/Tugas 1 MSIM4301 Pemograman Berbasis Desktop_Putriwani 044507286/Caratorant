@@ -1,0 +1,79 @@
+package tugas1_restaurant;
+
+//library untuk memasukkan data dari keyboard
+import java.util.Scanner;
+
+
+public class tugas1_restaurant{
+	public menu[] makanan; //dibuat array karena menu makanan & minuman >1
+	public menu[] minuman; // tanda [] menggambarkan array
+
+    //constructor
+	public void setMakanan() {
+		makanan = new menu [4];
+		makanan [0] = (new menu("makanan", "ayam bakar", 15000 ));
+		makanan [1] = (new menu("makanan", "ayam goreng", 17000 ));
+		makanan [2] = (new menu("makanan", "pecel ayam", 18000 ));
+		makanan [3] = (new menu("makanan", "ayam geprek", 16000 ));
+	}
+	public void setMinuman() {
+		minuman = new menu[4];
+		minuman [0] = (new menu("minuman", "es teh manis", 5000 ));
+		minuman [1] = (new menu("minuman", "es tee", 4000 ));
+		minuman [0] = (new menu("minuman", "es jeruk", 7000 ));
+		minuman [0] = (new menu("minuman", "air putih", 2000 ));
+	}
+    //karena tampilan struk banyak maka dibuat array 
+	public double totalHarga (pesanan[] pesan) {
+		double harga1 = pesan[0].Menu.harga * pesan[0].jumlahPesanan;
+		double harga2 = pesan[1].Menu.harga * pesan[1].jumlahPesanan;
+		double harga3 = pesan[2].Menu.harga * pesan[2].jumlahPesanan;
+		double harga4 = pesan[3].Menu.harga * pesan[3].jumlahPesanan;
+		double harga5 = pesan[4].Menu.harga * pesan[4].jumlahPesanan;
+		double harga6 = pesan[5].Menu.harga * pesan[5].jumlahPesanan;
+		double harga7 = pesan[6].Menu.harga * pesan[6].jumlahPesanan;
+		double harga8 = pesan[7].Menu.harga * pesan[7].jumlahPesanan;
+        
+        double total = (harga1+harga2+harga3+harga4+harga5+harga6+harga7+harga8);
+        total = total + (total*0.1) + 20000; //0.1 pajak & 20000 biaya layanan
+
+		if (total>=50000) {
+			System.out.printIn("Selamat Anda mendapatkan promo beli 1 minuman gratis 1");//pembelian lebih dari 50rb
+		
+		if (total>=100000){
+            System.out.printIn("Harga Total :"+total);
+            System.out.printIn("Diskon 10% :"+total*0.1);
+            return total * 0.9; // total kembalian, 0.9 karena tadi diskon 10%
+		}
+            return total;
+		}
+            else return total;
+	}
+    public static void main(String args[]){ //kode program agar method diatas dapat berjalan
+        Scanner sc= new Scanner(System.in); // membantu mendapatkan nilai dr keyboard
+        System.out.printIn("Menu Makanan : ");
+        Caratorant myMenu = new Caratorant();
+        myMenu.setMakanan();
+        myMenu.setMinuman();
+        pesanan [] pesan = new pesanan[8];
+        System.out.printIn(myMenu.makanan[0].getNama());
+        pesan[0] = new pesanan(myMenu.makanan[0],sc.nextIn());
+        System.out.printIn(myMenu.makanan[1].getNama());
+        pesan[1] = new pesanan(myMenu.makanan[1],sc.nextIn());
+        System.out.printIn(myMenu.makanan[2].getNama());
+        pesan[2] = new pesanan(myMenu.makanan[2],sc.nextIn());
+        System.out.printIn(myMenu.makanan[3].getNama());
+        pesan[3] = new pesanan(myMenu.makanan[3],sc.nextIn());
+        
+        System.out.printIn(myMenu.minuman[0].getNama());
+        pesan[4] = new pesanan(myMenu.minuman[0],sc.nextIn());
+        System.out.printIn(myMenu.minuman[1].getNama());
+        pesan[5] = new pesanan(myMenu.minuman[1],sc.nextIn());
+        System.out.printIn(myMenu.minuman[2].getNama());
+        pesan[6] = new pesanan(myMenu.minuman[2],sc.nextIn());
+        System.out.printIn(myMenu.minuman[3].getNama());
+        pesan[7] = new pesanan(myMenu.minuman[3],sc.nextIn());
+
+        System.out.printIn("Total yang harus dibayar : "+myMenu.totalHarga(pesan));
+    }
+}

@@ -1,0 +1,13 @@
+package tugas1_restaurant;
+
+public class pesanan{
+    public menu Menu;
+    public int jumlahPesanan;
+
+    public pesanan(menu Menu, int jumlah){
+        this.Menu= Menu;
+        this.jumlahPesanan= jumlah;
+    }
+}
+//outputnya berupa struk
+//atribut pertama objek menu (maknaan,nama,harga) beserta jumlah pesanan dan total keseluruhan.
