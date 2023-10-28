@@ -28,35 +28,6 @@ public class Caratorant {
         }
     }
 
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in); // Membantu mendapatkan nilai dari keyboard
-        System.out.println("Menu Makanan : ");
-        Caratorant myMenu = new Caratorant();
-        myMenu.setMakanan();
-        myMenu.setMinuman();
-        Pesanan[] pesan = new Pesanan[8];
-        System.out.println(myMenu.makanan[0].nama);
-        pesan[0] = new Pesanan(myMenu.makanan[0], sc.nextInt());
-        System.out.println(myMenu.makanan[1].nama);
-        pesan[1] = new Pesanan(myMenu.makanan[1], sc.nextInt());
-        System.out.println(myMenu.makanan[2].nama);
-        pesan[2] = new Pesanan(myMenu.makanan[2], sc.nextInt());
-        System.out.println(myMenu.makanan[3].nama);
-        pesan[3] = new Pesanan(myMenu.makanan[3], sc.nextInt());
-
-        System.out.println("Menu Minuman : ");
-        System.out.println(myMenu.minuman[0].nama);
-        pesan[4] = new Pesanan(myMenu.minuman[0], sc.nextInt());
-        System.out.println(myMenu.minuman[1].nama);
-        pesan[5] = new Pesanan(myMenu.minuman[1], sc.nextInt());
-        System.out.println(myMenu.minuman[2].nama);
-        pesan[6] = new Pesanan(myMenu.minuman[2], sc.nextInt());
-        System.out.println(myMenu.minuman[3].nama);
-        pesan[7] = new Pesanan(myMenu.minuman[3], sc.nextInt());
-
-        System.out.println("Total yang harus dibayar : " + myMenu.totalHarga(pesan));
-    }
-
     public Menu[] makanan; // Dibuat array karena menu makanan & minuman >1
     public Menu[] minuman; // Tanda [] menggambarkan array
 
@@ -77,7 +48,6 @@ public class Caratorant {
         minuman[3] = new Menu("minuman", "air putih", 2000);
     }
 
-    // Karena tampilan struk banyak maka dibuat array
     public double totalHarga(Pesanan[] pesan) {
         double total = 0;
 
@@ -99,5 +69,34 @@ public class Caratorant {
         } else
             return total;
     }
-}
 
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in); // Membantu mendapatkan nilai dari keyboard
+        System.out.println("Menu Makanan : ");
+        Caratorant myMenu = new Caratorant();
+        myMenu.setMakanan();
+        myMenu.setMinuman();
+        Pesanan[] pesan = new Pesanan[8];
+
+        System.out.println(myMenu.makanan[0].nama);
+        pesan[0] = new Pesanan(myMenu.makanan[0], sc.nextInt());
+        System.out.println(myMenu.makanan[1].nama);
+        pesan[1] = new Pesanan(myMenu.makanan[1], sc.nextInt());
+        System.out.println(myMenu.makanan[2].nama);
+        pesan[2] = new Pesanan(myMenu.makanan[2], sc.nextInt());
+        System.out.println(myMenu.makanan[3].nama);
+        pesan[3] = new Pesanan(myMenu.makanan[3], sc.nextInt());
+
+        System.out.println("Menu Minuman : ");
+        System.out.println(myMenu.minuman[0].nama);
+        pesan[4] = new Pesanan(myMenu.minuman[0], sc.nextInt());
+        System.out.println(myMenu.minuman[1].nama);
+        pesan[5] = new Pesanan(myMenu.minuman[1], sc.nextInt());
+        System.out.println(myMenu.minuman[2].nama);
+        pesan[6] = new Pesanan(myMenu.minuman[2], sc.nextInt());
+        System.out.println(myMenu.minuman[3].nama);
+        pesan[7] = new Pesanan(myMenu.minuman[3], sc.nextInt());
+
+        System.out.println("Total yang harus dibayar : " + myMenu.totalHarga(pesan));
+    }
+}
